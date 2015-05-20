@@ -36,7 +36,7 @@ $template LogglyFormat,"<%%pri%>%protocol-version% %timestamp:::date-rfc3339% %H
 <% if node['loggly']['tls']['enabled'] %>
 $DefaultNetstreamDriverCAFile <%= node['loggly']['tls']['cert_path'] %>/loggly_full.crt
 
-# Makes this an In-Memory Linked List queue, with a limit of 1000, and to discard all message once the limit is reached
+# Makes this an In-Memory Linked List queue, with a limit of 1000, and discard all message once the limit is reached
 # This is to ensure that if loggly is down we just discard the messages rather than block the applications that are logging
 # http://www.rsyslog.com/doc/queues.html
 $ActionQueueType LinkedList

@@ -3,7 +3,7 @@
 #Load stats module
 module(
   load="impstats"
-  interval="<% node['loggly']['rsyslog_stats']['interval'] %>"                         # how often to generate stats
-  log.file="<% node['loggly']['rsyslog_stats']['logfile'] %>"     # file to write those stats to
+  interval="<%= node['loggly']['rsyslog_stats']['interval'] %>"                         # how often to generate stats
+  log.file="<%= node['loggly']['rsyslog_stats']['logfile'] %>"     # file to write those stats to
   log.syslog="off"                      # don't send stats through the normal processing pipeline. More on that in a bit
 )
