@@ -22,6 +22,13 @@ include_recipe "rsyslog::default"
 
 include_recipe "loggly-rsyslog::tls" if node['loggly']['tls']['enabled']
 
+template node['loggly']['rsyslog_stats']['conf'] do
+  source 'rsyslog-loggly-stats.conf.erb'
+  owner 'root'
+  group 'root'
+  mode 0644
+end
+
 template node['loggly']['rsyslog']['conf'] do
   source 'rsyslog-loggly.conf.erb'
   owner 'root'
