@@ -16,7 +16,7 @@ default['loggly']['token']['databag_item'] = 'token'
 default['loggly']['token']['value'] = '' # Will be set from Data Bag above by default
 
 default['loggly']['rsyslog_stats']['conf'] = '/etc/rsyslog.d/1-stats.conf'
-default['loggly']['rsyslog_stats']['interval'] = '10' #in seconds
+default['loggly']['rsyslog_stats']['interval'] = '60' #in seconds
 default['loggly']['rsyslog_stats']['logfile'] = '/var/log/rsyslog-stats'
 
 default['loggly']['rsyslog']['conf'] = '/etc/rsyslog.d/10-loggly.conf'
