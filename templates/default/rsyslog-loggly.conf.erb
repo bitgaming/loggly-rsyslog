@@ -39,6 +39,7 @@ $DefaultNetstreamDriverCAFile <%= node['loggly']['tls']['cert_path'] %>/loggly_f
 # Makes this an In-Memory Linked List queue, with a limit of 1000, and discard all message once the limit is reached
 # This is to ensure that if loggly is down we just discard the messages rather than block the applications that are logging
 # http://www.rsyslog.com/doc/queues.html
+$ActionName 10-loggly_files
 $ActionQueueType LinkedList
 $ActionQueueDiscardMark 1000
 $ActionQueueDiscardSeverity 0
